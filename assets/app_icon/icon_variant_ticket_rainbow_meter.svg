@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (white) -->
+  <rect width="1024" height="1024" rx="220" fill="#FFFFFF"/>
+
+  <!-- Definitions -->
+  <defs>
+    <!-- Ticket gradients -->
+    <linearGradient id="ticketGrad" x1="0" y1="0" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="ticketSheen" x1="0" y1="0" x2="0" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Rainbow gradient (violet -> red) -->
+  <linearGradient id="rainbow" x1="282" y1="642" x2="742" y2="642" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="16%" stop-color="#6366F1"/>
+      <stop offset="32%" stop-color="#0EA5E9"/>
+      <stop offset="48%" stop-color="#22C55E"/>
+      <stop offset="64%" stop-color="#F59E0B"/>
+      <stop offset="80%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ticket group -->
+  <g id="ticket" transform="translate(72,272)">
+    <!-- Subtle drop shadow layers (no filters) -->
+    <rect x="12" y="14" width="880" height="480" rx="68" fill="#000000" opacity="0.10"/>
+    <rect x="8" y="10" width="880" height="480" rx="66" fill="#000000" opacity="0.06"/>
+    <!-- Body (dark slate, previous style) -->
+    <rect x="0" y="0" width="880" height="480" rx="64" fill="#111827" stroke="#1F2937" stroke-width="8"/>
+    <!-- Inner highlight/dark edges to simulate raised bevel -->
+    <rect x="18" y="18" width="844" height="444" rx="50" fill="none" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2"/>
+    <rect x="20" y="22" width="840" height="440" rx="48" fill="none" stroke="#000000" stroke-opacity="0.12" stroke-width="2"/>
+    <!-- Simple side notches -->
+    <circle cx="0" cy="120" r="28" fill="#FFFFFF"/>
+    <circle cx="0" cy="360" r="28" fill="#FFFFFF"/>
+    <circle cx="880" cy="120" r="28" fill="#FFFFFF"/>
+    <circle cx="880" cy="360" r="28" fill="#FFFFFF"/>
+    <!-- WokeWatch title on ticket (shadow + red) -->
+    <text x="440" y="90" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="56" fill="#000000" opacity="0.25">WokeWatch</text>
+    <text x="440" y="86" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="56" fill="#EF4444">WokeWatch</text>
+  </g>
+
+  <!-- Gauge group (track, rainbow, needle) -->
+  <g>
+    <!-- Track -->
+  <path d="M 282 642 A 230 230 0 0 1 742 642" stroke="#374151" stroke-width="28" fill="none" stroke-linecap="round"/>
+    <!-- Rainbow arc on top -->
+  <path d="M 282 642 A 230 230 0 0 1 742 642" stroke="url(#rainbow)" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <!-- Needle (slate) -->
+  <g transform="translate(512,642) rotate(-105)">
+      <rect x="-6" y="-8" width="12" height="125" rx="6" fill="#94A3B8"/>
+      <circle cx="0" cy="0" r="10" fill="#E5E7EB" stroke="#94A3B8" stroke-width="6"/>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,45 @@
+name: wokewatch_clean
+description: WokeWatch - IMDb-style movie ratings
+publish_to: 'none'
+version: 1.0.2+6
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  http: ^1.1.0
+  shared_preferences: ^2.2.0
+  supabase_flutter: ^2.4.2
+  provider: ^6.1.1
+  url_launcher: ^6.3.0
+  flutter_svg: ^2.0.9
+  google_mobile_ads: ^6.0.0
+  app_tracking_transparency: ^2.0.4
+  in_app_purchase: ^3.1.11
+  package_info_plus: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/tmdb_logo.png
+    - assets/app_icon/icon_variant_a_funnel_ticket.svg
+    - assets/app_icon/icon_variant_a2_funnel_ticket_oblique.svg
+    - assets/app_icon/icon_variant_b_funnel_ticket_pixels.svg
+    - assets/app_icon/icon_variant_ticket_rainbow_meter.svg
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: assets/app_icon/app_icon_1024.jpg
+  adaptive_icon_background: "#FFFFFF"
+  remove_alpha_ios: true

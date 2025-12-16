@@ -1,0 +1,55 @@
+definitions:
+  environment:
+    flutter: stable
+    xcode: latest
+    cocoapods: default
+
+workflows:
+  ios-release:
+    name: iOS Release Build
+    instance_type: mac_mini
+    max_build_duration: 120
+    environment:
+      ios_signing:
+        provisioning_profiles:
+          - name: WokeWatch App Store
+            bundle_id: com.wokewatch.app
+        certificates:
+          - name: WokeWatch Distribution Certificate
+      vars:
+        BUNDLE_ID: "com.wokewatch.app"
+        APP_STORE_CONNECT_ISSUER_ID: $APP_STORE_ISSUER_ID
+        APP_STORE_CONNECT_KEY_IDENTIFIER: $APP_STORE_KEY_ID
+        APP_STORE_CONNECT_PRIVATE_KEY: $APP_STORE_PRIVATE_KEY
+    scripts:
+      - name: Get Flutter dependencies
+        script: |
+          flutter pub get
+      - name: Build iOS release
+        script: |
+          flutter build ios --release --no-codesign
+      - name: Build and sign iOS app
+        script: |
+          cd ios
+          xcodebuild \
+            -workspace Runner.xcworkspace \
+            -scheme Runner \
+            -configuration Release \
+            -derivedDataPath build/ios/derived \
+            -archivePath build/ios/Runner.xcarchive \
+            archive
+          xcodebuild \
+            -exportArchive \
+            -archivePath build/ios/Runner.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath build/ios/ipa
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: key
+        key_identifier: $APP_STORE_KEY_ID
+        issuer_id: $APP_STORE_ISSUER_ID
+        key_content: $APP_STORE_PRIVATE_KEY
+        submit_to_testflight: false
+        submit_to_app_store: true

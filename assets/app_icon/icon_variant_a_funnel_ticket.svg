@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="220" fill="#111827"/>
+
+  <!-- Funnel (emerald) -->
+  <g transform="translate(192,160)">
+    <path d="M128 0 H512 a32 32 0 0 1 26 50 L384 256 v128 a40 40 0 0 1 -40 40 h-72 a40 40 0 0 1 -40 -40 V256 L102 50 A32 32 0 0 1 128 0Z" fill="#22C55E"/>
+  </g>
+
+  <!-- Red W blocked at rim (simplified zig-zag W) -->
+  <g transform="translate(300,210)">
+    <!-- W base shape -->
+    <path d="M0 0 L60 90 L120 0 L180 90 L240 0" stroke="#EF4444" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Small red particles above rim to imply filtering -->
+    <circle cx="30" cy="-24" r="10" fill="#EF4444"/>
+    <circle cx="120" cy="-18" r="8" fill="#EF4444"/>
+    <circle cx="210" cy="-30" r="9" fill="#EF4444"/>
+  </g>
+
+  <!-- Ticket (approved) with star cutout -->
+  <g transform="translate(260,640)">
+    <!-- Ticket body -->
+    <path d="M60 0 h444 a56 56 0 0 1 0 112 H60 a56 56 0 0 1 0 -112Z" fill="#22C55E"/>
+    <!-- Top/bottom notches -->
+    <circle cx="60" cy="56" r="28" fill="#111827"/>
+    <circle cx="504" cy="56" r="28" fill="#111827"/>
+    <!-- Star cutout -->
+    <path d="M330 28 L343 66 H384 L351 89 L364 128 L330 104 L296 128 L309 89 L276 66 H317 Z" fill="#111827"/>
+  </g>
+</svg>

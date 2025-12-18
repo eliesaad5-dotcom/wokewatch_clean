@@ -53,3 +53,10 @@ workflows:
         key_content: $APP_STORE_PRIVATE_KEY
         submit_to_testflight: false
         submit_to_app_store: true
+      email:
+        recipients:
+          - $BUILD_NOTIFICATION_EMAIL
+        subject: "WokeWatch iOS Build Complete"
+        notify:
+          success: true
+          failure: true

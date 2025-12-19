@@ -6772,7 +6772,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-          ),          git remote add origin https://github.com/johndoe/wokewatch_clean.git
+          ),
           if (year.isNotEmpty)
             Text(
               year,
